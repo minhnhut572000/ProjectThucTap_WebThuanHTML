@@ -1,0 +1,300 @@
+body {
+    margin: 0;
+    padding: 0;
+
+    background-image: url(hinhanh/footer-bg.svg), url(hinhanh/solutions-bg.svg);
+    background-repeat:  no-repeat;
+    background-attachment: scroll;
+    background-position: 50% 4500px, 50% 200px;
+}
+
+section {
+    margin: 0.3em 1em;
+}
+
+.main1 { 
+    padding: 0;
+    margin: 0;
+}
+
+.ss-text-main1 {
+    padding-top: 10em;
+}
+
+h1.tt-solution {
+    font-size: 50px;
+    font-weight: 200;
+}
+
+.text-tt-solution {
+    font-size: 21px;
+    color: rgb(173, 163, 163);
+    font-weight: 10;
+}
+
+.custom_search {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 2em;
+}
+
+.email {
+    width: 100%;
+    height: 40px;
+    border: 1px solid deepskyblue;
+    border-radius: 20px;
+    background-color: white;
+    outline: none;
+
+}
+
+.sm_email {
+    width: 30%;
+    height: 44px;
+    border: 0;
+    border-radius: 20px;
+    background-color: deepskyblue;
+    color: white;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: -6px;
+    z-index: 2;
+    right: 0px;
+    font-weight: bold;
+}
+
+.img-v4 {
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
+.text-exlore {
+    padding-top: 3em;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+}
+
+.tt-simple {
+    font-size: 40px;
+    color: white;
+}
+
+p.txt-simple {
+    font-size: 20px;
+    color: rgb(172, 169, 169);
+}
+
+.img-main3 {
+    display: none;
+}
+
+.img-main4 {
+    margin: 0;
+    padding: 0;
+}
+
+p.tt-powerful {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+p.txt-powerful {
+    font-size: 20px;
+    color: rgb(172, 169, 169);
+}
+
+.main6,
+.main7 {
+    clear: both;
+}
+
+.text-main6 {
+    font-size: 40px;
+    margin: 1.5em 0;
+}
+
+.txt-platform {
+    color: rgb(172, 169, 169);
+    font-size: 20px;
+}
+
+.main7 ul {
+    margin: 0 3em; 
+    padding: 0;
+    list-style: url(hinhanh/tick.svg);
+}
+
+.main7 ul li {
+    font-size: 20px;
+    margin: 1em 0;
+    color: rgb(172, 169, 169);
+}
+
+.let-talk {
+    clear: both;
+    margin-top: 25em;
+    padding-bottom: 10em;
+}
+
+.custom_search2 {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 450px;
+    margin: auto;
+}
+
+.email2 {
+    width: 100%;
+    height: 40px;
+    border: 1px solid deepskyblue;
+    border-radius: 20px;
+    background-color: none;
+    outline: none;
+
+}
+
+.sm_email2 {
+    width: 30%;
+    height: 44px;
+    border: 0;
+    border-radius: 20px;
+    background-color: deepskyblue;
+    color: white;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: -6px;
+    z-index: 2;
+    right: 0px;
+    font-weight: bold;
+}
+
+.sm_email2:hover {
+    background-color: cyan;
+}
+
+.txt-start {
+    margin-top: 2em;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+}
+
+@media screen and (min-width: 768px) {
+    .main1:before, .main1:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .ss-text-main1 {
+        float: left;
+        margin: auto;
+        width: 40%;
+    }
+
+    .img-v4 {
+        width: 55%;
+        display: block;
+        float: left;
+        margin: auto;
+    }
+
+    .ss-text-main3 {
+        width: 40%;
+        float: left;
+        margin: auto;
+    }
+
+    .img-main3 {
+        display: block;
+        width: 55%;
+        float: left;
+        margin: auto;
+    }
+
+    .img-main4 {
+        float: left;
+        margin: 0 0;
+        width: 45%;
+        margin-right: 25%;
+        margin-left: -10%;
+    }
+
+    .ss-text-main4 {
+        float: left;
+        margin: auto;
+        width: 40%;
+        margin-top: 10em;
+    }
+
+    .img-main5 {
+        float: right;
+        margin: 0 0;
+        width: 45%;
+        margin-right: 5%;
+        margin-left: 10%
+    }
+
+    .ss-text-main5 {
+        float: left;
+        margin: auto;
+        width: 35%;
+        margin-top: 8%;
+    }
+
+    .main6 {
+        width: 50%;
+    }
+
+    .main7 {
+        width: 100%;
+        margin-bottom: 5cm;
+    }
+
+    .tt-main7 {
+        float: left;
+        margin: auto;
+        width: 19%;
+        padding-top: 0.5%;
+        
+    }
+
+    .ul1-main7 {
+        float: left;
+        margin: auto;
+        width: 19%;
+        
+    }
+    .ul2-main7 {
+        float: left;
+        margin: auto;
+        width: 19%;
+        
+    }
+    .ul3-main7 {
+        float: left;
+        margin: auto;
+        width: 19%;
+        
+    }
+
+    body {
+        background-position: 50% 3700px, 50% 200px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container{
+        max-width: 1280px;
+        margin: auto;
+    }
+}

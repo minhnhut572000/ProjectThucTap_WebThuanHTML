@@ -1,0 +1,94 @@
+.container {
+    margin: 0 1em;
+}
+
+.main1 {
+    
+}
+
+.main1 .paragraph1 {
+    padding-top: 3em;
+}
+
+.tt-paragraph1{
+    font-size: 40px;
+    font-weight: 100;
+    padding-top: 2em;
+}
+
+.li-paragraph1 {
+    padding: 2px 0;
+    color: rgb(116, 116, 116);
+}
+
+.li-paragraph1-disc {
+    padding: 2px 0;
+    color: rgb(116, 116, 116);
+    list-style-type: disc;
+    margin: 0.5em 0;
+}
+
+.li-paragraph1-decimal {
+    padding: 2px 0;
+    color: rgb(116, 116, 116);
+    list-style-type: decimal;
+    margin: 0.5em 0;
+}
+
+.li-paragraph1-circle {
+    padding: 2px 0;
+    color: rgb(116, 116, 116);
+    list-style-type: circle;
+    margin: 0.5em 0;
+    text-indent: 20px;
+}
+
+
+.tt-ph-p{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.span-paragraph1 {
+    font-weight: bold;
+    color: black;
+    width: 100%;
+}
+
+.code {
+    word-wrap: break-word;
+    font-size: small;
+    background-color: rgb(226, 223, 223);
+    color: royalblue;
+}
+
+.li-before {
+    line-height: 1.3em;
+    margin-bottom: 1em;
+    padding: 2px 0;
+    color: rgb(116, 116, 116);
+}
+
+.code2 {
+    word-wrap: break-word;
+    font-size: small;
+    background-color: rgb(226, 223, 223);
+    color: royalblue;
+    margin-left: 20px;
+}
+
+.code1 a {
+    text-decoration: none;
+}
+
+.p-once {
+    color: rgb(116, 116, 116);
+}
+
+
+@media screen and (min-width: 1024px) {
+    .container{
+        max-width: 1280px;
+        margin: auto;
+    }
+}

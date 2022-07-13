@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <link rel="stylesheet" href="css-playout.css">
+    <link rel="stylesheet" href="css-operator.css">
+    <title>Operator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo_h88">  
+            </div>
+            <div class="toggle">
+                <i id ="idtoggle_menu" class="fas fa-bars"></i>
+            </div>
+            <nav class="menu">
+                <ul class="main_menu">
+                    <li><a class="li_a" href="">Home</a></li>
+                    <li><a class="li_a" href="">News</a></li>
+                    <li><a class="li_a" href="">Games</a></li>
+                    <li><a class="li_a" href="">Solution</a></li>
+                    <li><a class="li_a" href="">API</a></li>
+                </ul>
+            </nav>
+            <div id="idnav_menu" class="modal_menu">
+                <div class="logo_h88"> 
+                    
+                </div>
+                <span class="close_menu">&times;</span>
+                <div class="nav_content_menu">
+                    <nav>
+                        <ul class="nav_menu">
+                            <li><a class="nav_li_a" href="">Home</a></li>
+                            <li><a class="nav_li_a" href="">News</a></li>
+                            <li><a class="nav_li_a" href="">Games</a></li>
+                            <li><a class="nav_li_a" href="">Solution</a></li>
+                            <li><a class="nav_li_a" href="">API</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <footer>
+                    <button class="button_link">LET'S TALK</button>
+                </footer>
+                </div>
+        </div>
+
+        <section class="main1">
+            <div class="paragraph1">
+                <h1 class="tt-paragraph1">Operator Documentation</h1>
+                <p class="tt-ph-p">Overview</p>
+                <li class="li-paragraph1">The seamless wallet integration consists of two REST API's: <span class="span-paragraph1">Games API</span>  and <span class="span-paragraph1">Wallet API.</span></li>
+                <li class="li-paragraph1"><span class="span-paragraph1">Games API</span> is an API that returns the game URL and the list of available games. Implemented by the Hub88.</li>
+                <li class="li-paragraph1"><span class="span-paragraph1">Wallet API.</span> is an API that Hub88 triggers to manipulate the user's balance. Implemented by the Operator.</li>
+                <li class="li-paragraph1"><span class="span-paragraph1">TransferWallet API </span>is an optional API that lets the Operator deposit money to the player's account, withdraw money from the player's account, and get the player's balance. To enable the TransferWallet API, please contact Hub88.</li>
+
+            </div>
+
+            <div>
+                <h1 class="tt-paragraph1">Request signing</h1>
+                <li class="li-paragraph1">All <span class="span-paragraph1">Games API</span> requests have to be signed by Operator.</li>
+                <li class="li-paragraph1">All <span class="span-paragraph1">Wallet API</span> requests have to be signed by Hub88.</li>
+                <li class="li-paragraph1">All <span class="span-paragraph1">TransferWallet API</span> requests must be signed by the Operator.</li>
+                <li><br></li>
+                <li class="li-before">Before the integration, the Operator generates a private/public key pair and sends the public key to Hub88. Hub88 sends its public key to the Operator. The body of all requests will be signed with <span class="code">RSA-SHA256</span> using the respective private key and encoded to BASE64 (We have <span class="code">code examples</span> in few programming languages). The signature will be placed in the <span class="code">X-Hub88-Signature</span> header. The Operator needs to verify all <span class="span-paragraph1">Wallet API</span> requests using the public key provided by Hub88. Hub88 verifies all <span class="span-paragraph1">Games API</span> requests using the public key provided by the Operator.</li>
+                <li class="li-paragraph1"><span class="span-paragraph1">Example:</span></li>
+            
+                <li class="li-paragraph1-disc">Request body:
+                    <br/>
+                    <span class="code2">
+                        {"user":"3nYTOSjdlF6UTz9Ir","country":"XX","currency":"EUR","operator_id":1,"token":"cd6bd8560f3bb8f84325152101adeb45","platform":"GPL_DESKTOP","game_code":"clt_dragonrising","lang":"en","lobby_url":"https://examplecasino.io","ip":"::ffff:10.0.0.39"}
+                    </span>
+                </li>
+
+                <li class="li-paragraph1-disc">Private key:
+                    <span class="code1"><a href="https://raw.githubusercontent.com/coingaming/Hub88-Examples/master/priv/private.pem" target="_blank">here</a></span>
+                </li>
+
+                <li class="li-paragraph1-disc">Request body:
+                    <br/>
+                    <span class="code2">
+                        DYKK0KsSMayoyHcpFx32R57mZ8ey2r8U4RscT9LiWEFkd40V/f2n9JafsC+yuB8OSHz+wdCvyxvqacNiL8r3ZGEBdTL4lrcjdM5PWHQu8auYNp2mGE0tbX6/KGyk8nyQ3+h1HogIHj5hnMNYx0r+AhFT2tD/IT2b3Pq6oDPNL8rK0CbDCm8w7+gal1i0T1pDo61e2CTDTHpfm4ELEKcff2iiIRvgQ52nUCkuxQjCN/BGyEC1il0AVwlcb8CKU6Utg48UqvPLqu38qahI5X53zBMpLFIOtOYcFoepWmHvBxh0GDM4NIfQQ3Cm5sFyN3AsqzM7rqA0N9VZP0QPK8fA0g==
+                    </span>
+                </li>
+            </div>
+
+            <div>
+                <h1 class="tt-paragraph1">Request consistency</h1>
+                <li class="li-paragraph1"><span class="span-paragraph1">Wallet API</span> requests have to be idempotent. All transactions contain a <span class="code">transaction_uuid</span> field. Operator has to ensure that requests with the same <span class="code">transaction_uuid</span> are not processed twice while the response has to be same for all duplicate requests. Operator may ignore idempotency requirement for <span class="code">/user/balance</span> call.</li>
+                
+            </div>
+
+            <div>
+                <h1 class="tt-paragraph1">Gameplay</h1>
+                <p class="p-once">Once you meet the prerequisites, the process is as follows:</p>
+                <li class="li-paragraph1-decimal">Obtain a game URL from Hub88.</li>
+                <li class="li-paragraph1-decimal">Direct the customer to the URL provided by Hub88.</li>
+                <li class="li-paragraph1-decimal">Respond to in-game events sent by Hub88 and update the customer's balance (<span class="span-paragraph1">SEAMLESS WALLET ONLY</span>)</li>
+                <p class="p-once">Note that the process is different for DEMO and REAL gameplay modes. In DEMO mode, user can open the game, check the rules/graphics/paytable, and play with fun mode money. Not all game providers allow DEMO gameplay (none of Live Dealers allow it).</p>
+                <p class="p-once">Below is an example of interaction flow to open the game in DEMO mode:</p>
+                <section>
+                    <li class="li-paragraph1-decimal">Operator generates and stores a unique game session token.</li>
+                    <li class="li-paragraph1-decimal">Operator makes a Game API call <span class="code">/game/url</span> and passes the generated token along with the other request parameters.</li>
+                    <p class="p-once" style="margin-left: 20px;"><span class="span-paragraph1">NOTE:</span> In case of SEAMLESS WALLET integration, Operator needs to be ready to respond to balance API calls even before getting the game URL back.</p>
+                    <li class="li-paragraph1-decimal">When the game URL is returned, the Operator uses it to direct the player to the game (for example, launch it in iframe or redirect player to the URL).</li>
+                    <p class="p-once">Following steps are for <spans class="span-paragraph">SEAMLESS WALLET integration only</spans>. In case of Transfer Wallet integration, all game actions and balance updates will be handled on Hub88 side.</p>
+                    <li class="li-paragraph1-decimal">When the game URL is loaded in the browser, Hub88 server makes a Wallet API call /user/balance to the Operator's server.</li>
+                    <li class="li-paragraph1-decimal">Operator verifies the token against the stored token and returns the user's balance. The user can then place a bet.</li>
+                    <li class="li-paragraph1-decimal">When the user attempts to place a bet, a Wallet API call /transaction/bet is triggered on the Operator's server.</li>
+                    <li class="li-paragraph1-decimal">The Operator verifies the token, ensures that the user has enough money for this bet, decreases the user's balance by the bet amount, and returns the updated user's balance.</li>
+                    <li class="li-paragraph1-decimal">If the user wins, the Wallet API triggers a call /transaction/win on the Operator's server.</li>
+                    <li class="li-paragraph1-decimal">Operator verifies the token, increases the user's balance by the win amount, and returns the updated user's balance.</li>
+                    <li class="li-paragraph1-decimal">Behaviour in case of user's loss depends on game provider's internal logic. Possible options:
+                        <li class="li-paragraph1-circle">Nothing is sent</li>
+                        <li class="li-paragraph1-circle">Sent win with amount 0</li>
+                    </li>
+
+                </section>
+    
+            </div>
+        </section>
+
+        <footer style="clear: both;">
+            <div class="ft_menu">
+                <p class="tt_menu_footer">Company</p>
+                <nav class="menu-footer">
+                    <ul class="nav-menu-footer">
+                        <li><a class="li_a_ft" href="">Home</a></li>
+                        <li><a class="li_a_ft" href="">News</a></li>
+                        <li><a class="li_a_ft" href="">Games</a></li>
+                        <li><a class="li_a_ft" href="">Solution</a></li>
+                        <li><a class="li_a_ft" href="">API</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="ft_api">
+                <p class="tt_menu_footer">API</p>
+                <li><a class="li_a_ft" href="">Documentation</a></li>
+            </div>
+            <div class="ft_responsible">
+                <p class="tt_menu_footer">Responsible Gaming</p>
+                <img class="img-18" src="hinhanh/18.png" alt="logo 18">
+                <img class="img-ga" src="hinhanh/ga.png" alt="logo ga">
+                <img class="img-gamcare" src="hinhanh/gamcare.png" alt="logo gamcare">
+
+            </div>
+            <div class="div_mga">
+                <img src="hinhanh/mga.png" alt="logo mga">
+                <p class="text-mga">This website is operated by HUB88 Limited,
+                    a company registered in Malta under company registration number C86394.
+                    Registered address: Triq MRO Frank Galea, Zebbug, ZBG9019, MALTA.
+                    HUB88 Limited is licensed and regulated by the Malta Gaming Authority: B2B Critical Supply
+                    License number MGA/B2B/536/2018.
+                </p>
+                <p class="copyright-mga">Copyright © 2021. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+
+        var modal_menu = document.getElementById("idnav_menu");
+
+        var toggle = document.getElementById("idtoggle_menu");
+
+        var span_menu = document.getElementsByClassName("close_menu")[0];
+
+        toggle.onclick = function() {
+            modal_menu.style.display = "block";
+        }
+
+        span_menu.onclick = function() {
+            modal_menu.style.display = "none";
+        }
+    </script>
+</body>
+</html>

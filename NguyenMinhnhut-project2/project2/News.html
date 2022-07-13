@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <link rel="stylesheet" href="css-playout.css">
+    <link rel="stylesheet" href="css-news.css">
+    
+    <title>News</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo_h88">  
+            </div>
+            <div class="toggle">
+                <i id ="idtoggle_menu" class="fas fa-bars"></i>
+            </div>
+            <nav class="menu">
+                <ul class="main_menu">
+                    <li><a class="li_a" href="">Home</a></li>
+                    <li><a class="li_a" href="">News</a></li>
+                    <li><a class="li_a" href="">Games</a></li>
+                    <li><a class="li_a" href="">Solution</a></li>
+                    <li><a class="li_a" href="">API</a></li>
+                </ul>
+            </nav>
+            <div id="idnav_menu" class="modal_menu">
+                <div class="logo_h88"> 
+                    
+                </div>
+                <span class="close_menu">&times;</span>
+                <div class="nav_content_menu">
+                    <nav>
+                        <ul class="nav_menu">
+                            <li><a class="nav_li_a" href="">Home</a></li>
+                            <li><a class="nav_li_a" href="">News</a></li>
+                            <li><a class="nav_li_a" href="">Games</a></li>
+                            <li><a class="nav_li_a" href="">Solution</a></li>
+                            <li><a class="nav_li_a" href="">API</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <footer>
+                    <button class="button_link">LET'S TALK</button>
+                </footer>
+            </div>
+        </div>
+
+        <section>
+            <div class="hub88-melita">
+                <img style="width:100%" src="hinhanh/hub88-melitafc.png" alt="hub88 and melita">
+                <h1>Hub88 partners up with Malta football club Melita FC</h1>
+                <p>July 2, 2021</p>
+                <img style="width: 50px; border-radius: 50%; float: left;" src="hinhanh/Hub88.png" alt="hub88">
+                <p style="float: left; margin: 1em;">Hub88</p>
+                <p style="clear: both; padding: 1em 0;">A partnership between Hub88 and Melita FC will see data analytics in football taken to a next level.</p>
+            </div>
+            <hr  style="width: 90%; align-items: center; margin-top: 8em;"/>
+        </section>
+
+        <section style="margin-top: 5em;">
+            <div class="more-news">
+                <h1>More news</h1>
+            </div>
+            <div class="aside-search">
+                <input class="search" type="text" placeholder="Search..">
+            </div>
+        </section>
+
+        <section class="pos" style="clear: both;">
+            <div class="hub88-melita">
+                <img style="width:100%" src="hinhanh/shutterstock_600174275-e1564476314113.jpg" alt="hub88 and melita">
+                <h1>Hub88 raises the game with new Phoenix Jackpot engagement tool</h1>
+                <p>July 2, 2021</p>
+                <img style="width: 50px; border-radius: 50%; float: left;" src="hinhanh/Hub88.png" alt="hub88">
+                <p style="float: left; margin: 1em;">Hub88</p>
+                <p style="clear: both; padding: 1em 0;">Content aggregator Hub88.io has introduced its Phoenix Jackpot Wheel casino engagement tool, which it says has “already provided a significant performance boost” to early adopters.</p>
+            </div>
+        </section>
+
+        
+
+    </div>
+
+    <script>
+        var modal_menu = document.getElementById("idnav_menu");
+
+        var toggle = document.getElementById("idtoggle_menu");
+
+        var span_menu = document.getElementsByClassName("close_menu")[0];
+
+        toggle.onclick = function() {
+            modal_menu.style.display = "block";
+        }
+
+        span_menu.onclick = function() {
+            modal_menu.style.display = "none";
+        }
+    </script>
+</body>
+</html>
